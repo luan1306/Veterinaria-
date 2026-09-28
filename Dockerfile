@@ -4,10 +4,10 @@ WORKDIR /app
 
 COPY . .
 
-RUN chmod +x ./mvnw
+RUN chmod +x ./veterinaria/mvnw
 
-RUN ./mvnw clean package -DskipTests
+RUN ./veterinaria/mvnw clean package -DskipTests -f ./veterinaria/pom.xml
 
 EXPOSE 8080
 
-CMD ["sh", "-c", "java -jar target/*.jar"]
+CMD ["sh", "-c", "java -jar veterinaria/target/*.jar"]
